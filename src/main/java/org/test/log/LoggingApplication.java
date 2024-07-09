@@ -21,11 +21,12 @@ public class LoggingApplication implements CommandLineRunner {
     @Override
     public void run(String... args) {
         try {
-            Exception e1 = new Exception("Third Cause");
-            Exception e2 = new Exception("Second Cause", e1);
-            Exception e3 = new Exception("First Cause", e2);
-            Exception e4 = new Exception("Root Exception", e3);
-            logger.error("The exeption: ", e4);
+            Exception e4 = new Exception("forth Cause");
+            Exception e3 = new Exception("Third Cause", e4);
+            Exception e2 = new Exception("Second Cause", e3);
+            Exception e1 = new Exception("First Cause", e2);
+            Exception e = new Exception("Root Exception", e1);
+            logger.error("The exeption: ", e);
         } catch (Exception e) {
             logger.error("An error occurred", e);
         }
